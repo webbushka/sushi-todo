@@ -1,0 +1,11 @@
+._*
+*.sublime-*
+.DS_Store
+.DS_Store?
+.sass-cache/
+.Trashes
+bower_components/
+docs/
+node_modules/
+npm-debug.log
+tmp/

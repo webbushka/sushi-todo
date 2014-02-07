@@ -1,0 +1,24 @@
+{
+  "name": "todo",
+  "version": "0.0.1",
+  "authors": [
+    "AJ Webb <me@ajwebb.me>"
+  ],
+  "main": "application.js",
+  "license": "MIT",
+  "homepage": "http://ajwebb.me",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.0",
+    "hogan": "~3.0.0",
+    "routie": "~0.3.2"
+  },
+  "devDependencies": {}
+}
