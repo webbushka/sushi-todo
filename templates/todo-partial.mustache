@@ -1,0 +1,9 @@
+<li class="{{#isCompleted}}completed{{/isCompleted}} {{#isEditing}}editing{{/isEditing}}"}}>
+	{{#isEditing}}
+		<input type="text" value={{title}} class="edit" data-todo="{{id}}">
+	{{/isEditing}}
+	{{^isEditing}}
+		<input type="checkbox" {{#isCompleted}}checked{{/isCompleted}} class="toggle" data-todo="{{id}}">
+		<label class="edit-todo" data-todo="{{id}}">{{title}}</label><button class="destroy" data-todo="{{id}}"></button>
+	{{/isEditing}}
+</li>

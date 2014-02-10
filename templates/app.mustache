@@ -1,0 +1,42 @@
+<section id="todoapp">
+	<header id="header">
+		<h1>todos</h1>
+		<input type="text" id="new-todo" placeholder="What needs to be done?">
+	</header>
+
+	<section id="main">
+		<ul id="todo-list">
+		{{#todos}}
+			{{> todo-partial}}
+		{{/todos}}
+		</ul>
+		<input type="checkbox" id="toggle-all" {{#allAreDone}}checked{{/allAreDone}}>
+	</section>
+
+	<footer id="footer">
+		<span id="todo-count">
+			<strong>{{remaining}}</strong> {{inflection}} left
+		</span>
+		<ul id="filters">
+			<li>
+				<a href="#/" class="{{tabAll}}">All</a>
+			</li>
+			<li>
+				<a href="#/active" class="{{tabActive}}">Active</a>
+			</li>
+			<li>
+				<a href="#/completed" class="{{tabCompleted}}">Completed</a>
+			</li>
+		</ul>
+
+		{{#hasCompleted}}
+			<button id="clear-completed">
+			Clear Completed ({{completed}})
+			</button>
+		{{/hasCompleted}}
+	</footer>
+</section>
+
+<footer id="info">
+	<p>Double-click to edit a todo</p>
+</footer>
