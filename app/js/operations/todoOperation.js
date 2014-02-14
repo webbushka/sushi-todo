@@ -27,6 +27,12 @@ var TodoOperation = (function () {
 							scope.todos = [];
 						}
 
+						if (!('tabAll' in scope) || !('tabActive' in scope) || !('tabCompleted' in scope)) {
+							scope.tabAll = true;
+							scope.tabActive = false;
+							scope.tabCompleted = false;
+						}
+
 						store.set('todo', scope);
 
 						done(null, pojoClone(scope));
@@ -49,12 +55,12 @@ var TodoOperation = (function () {
 
 						store.set('todo', scope);
 
-						if (scope.tabActive !== null) {
+						if (scope.tabActive === true) {
 							scope.todos = _.where(scope.todos, {
 								isCompleted: false
 							});
 						}
-						else if (scope.tabCompleted !== null) {
+						else if (scope.tabCompleted === true) {
 							scope.todos = _.where(scope.todos, {
 								isCompleted: true
 							});
@@ -113,6 +119,10 @@ var TodoOperation = (function () {
 					saveNew: function saveNew(value, done) {
 						var scope = store.get('todo') || {},
 							id = getRandomChar() + getRandomChar();
+
+						if (!value || _.str.trim(value) === '') {
+							return done('A todo needs to have a value!', null);
+						}
 
 						if (!('todos' in scope)) {
 							scope.todos = [];

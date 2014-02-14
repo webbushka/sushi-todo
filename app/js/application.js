@@ -11,6 +11,8 @@
 		// -- configure all the modules
 		InitConfigure = require('./config/init.js').configure(container);
 
+	_.str = require('underscore.string');
+
 	// -- define utilities
 	container.define({ name : 'jquery',		type : function () { return $; }, singleton: true })
 		.define({ name : '_',				type : function () { return _; }, singleton : true })
