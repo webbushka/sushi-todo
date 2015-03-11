@@ -19,4 +19,4 @@ Todo app written in the Sushi framework
 
 ## Credit
 
-Sushi framework created by @LlamaSantos and @phlik
+Sushi framework created by [https://github.com/LlamaSantos](@LlamaSantos) and [@phlik](https://github.com/phlik)
